@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvResultTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Dominant Dosha"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvDoshaName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vata"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_green"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Percentage Bars -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dosha Distribution"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Vata -->
+                    <TextView
+                        android:id="@+id/tvVataPercent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vata: 40%"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbVata"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:progressTint="#9C27B0"
+                        android:progressBackgroundTint="#E1BEE7"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Pitta -->
+                    <TextView
+                        android:id="@+id/tvPittaPercent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pitta: 30%"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbPitta"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:progressTint="#FF5722"
+                        android:progressBackgroundTint="#FFCCBC"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Kapha -->
+                    <TextView
+                        android:id="@+id/tvKaphaPercent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kapha: 30%"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbKapha"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:progressTint="#4CAF50"
+                        android:progressBackgroundTint="#C8E6C9"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Description -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="About Your Dosha"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvDoshaDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description of dosha and tips..."
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <Button
+                android:id="@+id/btnSaveDosha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save and Continue"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary_green"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnRetake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retake Quiz"
+                android:textColor="@color/primary_green"
+                android:backgroundTint="@color/card_background"
+                app:strokeColor="@color/primary_green"
+                app:strokeWidth="1dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

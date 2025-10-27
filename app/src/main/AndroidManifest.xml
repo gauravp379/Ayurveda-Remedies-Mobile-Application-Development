@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ayurveda_remedies">   <!-- example -->
+
+    <!-- Wellness Tracker Permissions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <!-- Camera and Storage Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo_main"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ayurveda_Remedies">
+
+        <!-- Splash Screen as Launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        
+        <!-- Remedy List Activity -->
+        <activity
+            android:name=".RemedyListActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Remedy Detail Activity -->
+        <activity
+            android:name=".RemedyDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Favorites Activity -->
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Profile Activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Dosha Quiz Activity -->
+        <activity
+            android:name=".DoshaQuizActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Quiz Result Activity -->
+        <activity
+            android:name=".QuizResultActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Calendar Activity -->
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Daily Wellness Activity -->
+        <activity
+            android:name=".DailyWellnessActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Progress Activity -->
+        <activity
+            android:name=".ProgressActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Chatbot Activity -->
+        <activity
+            android:name=".ChatbotActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        
+        <!-- Feedback Activity -->
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity" />
+        
+        <!-- Broadcast Receivers -->
+        <receiver
+            android:name=".ReminderReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <!-- FileProvider for camera images -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+
+    </manifest>

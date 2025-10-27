@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+            android:layout_marginTop="20dp"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_profile"
+                        android:textColor="@color/primary_green"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold" />
+
+                    <!-- Profile Picture Section -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:gravity="center">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivProfilePicture"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/ic_profile"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/primary_green" />
+
+                        <ImageButton
+                            android:id="@+id/btnEditProfilePic"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignEnd="@id/ivProfilePicture"
+                            android:layout_alignBottom="@id/ivProfilePicture"
+                            android:background="@drawable/circle_background"
+                            android:src="@android:drawable/ic_menu_camera"
+                            android:contentDescription="Edit profile picture"
+                            android:scaleType="centerInside"
+                            android:padding="6dp" />
+                    </RelativeLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:hint="@string/name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:hint="@string/age">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/dosha_type"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDosha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:minHeight="48dp" />
+
+                    <Button
+                        android:id="@+id/btnTakeQuiz"
+                        style="@style/RoundedButtonOutlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/start_quiz" />
+
+                    <Button
+                        android:id="@+id/btnSave"
+                        style="@style/RoundedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="@string/save_profile" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            
+            <!-- Quiz Results Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardQuizResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Dosha Results"
+                        android:textColor="@color/primary_green"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold" />
+                        
+                    <TextView
+                        android:id="@+id/tvDoshaResult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Dominant: Vata"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+                    
+                    <TextView
+                        android:id="@+id/tvVataScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Vata: 40%"
+                        android:textSize="14sp" />
+                    
+                    <ProgressBar
+                        android:id="@+id/pbVataProfile"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:progressTint="#9C27B0"
+                        android:layout_marginTop="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/tvPittaScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Pitta: 30%"
+                        android:textSize="14sp" />
+                    
+                    <ProgressBar
+                        android:id="@+id/pbPittaProfile"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:progressTint="#FF5722"
+                        android:layout_marginTop="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/tvKaphaScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Kapha: 30%"
+                        android:textSize="14sp" />
+                    
+                    <ProgressBar
+                        android:id="@+id/pbKaphaProfile"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:progressTint="#4CAF50"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="@color/soft_cream"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💡 About Doshas"
+                        android:textColor="@color/primary_green"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:text="In Ayurveda, doshas are the three fundamental energies that govern our physical and mental processes:\n\n• Vata (Air &amp; Space) - Movement\n• Pitta (Fire &amp; Water) - Transformation\n• Kapha (Earth &amp; Water) - Structure\n\nKnowing your dosha helps personalize your wellness journey."
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Feedback Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="📝 Give Feedback"
+                android:textSize="16sp"
+                app:icon="@android:drawable/ic_menu_edit"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
