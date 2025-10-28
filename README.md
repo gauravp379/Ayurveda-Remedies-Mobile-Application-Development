@@ -2,6 +2,8 @@
 
 A beautiful and comprehensive Android application featuring traditional Ayurvedic remedies for various health conditions.
 
+![WhatsApp Image 2025-10-28 at 13 53 10_5745e528](https://github.com/user-attachments/assets/5a357d18-6383-4e61-aa36-bdafc7da3529)
+
 ## ✨ Features
 
 ### 🏠 Home Screen
@@ -39,6 +41,28 @@ Each remedy includes:
 - **Beautiful UI** - Material Design with natural color scheme
 
 ## 📱 App Structure
+![WhatsApp Image 2025-10-28 at 13 53 11_8ed89c77](https://github.com/user-attachments/assets/cc070a3b-c8f0-4a51-9dec-09cf5c1b36ec)
+
+![WhatsApp Image 2025-10-28 at 13 53 15_bf4eabbc](https://github.com/user-attachments/assets/d42b1765-0e1f-4039-9e13-091c02b9b370)
+
+![WhatsApp Image 2025-10-28 at 13 53 15_c79e62f2](https://github.com/user-attachments/assets/c0f7d973-67b4-4fe0-9201-815585cf3827)
+
+![WhatsApp Image 2025-10-28 at 13 53 16_aa8d3a81](https://github.com/user-attachments/assets/1a99b031-f5fe-40a4-bb56-984e6546afb2)
+
+![WhatsApp Image 2025-10-28 at 13 53 16_4d1baecf](https://github.com/user-attachments/assets/dd4775ad-cdaf-491b-9acb-b94bbcb19304)
+
+![WhatsApp Image 2025-10-28 at 13 53 17_55f0491a](https://github.com/user-attachments/assets/67f0fdd2-5504-4346-84fd-f5d6475144b2)
+
+![WhatsApp Image 2025-10-28 at 13 53 17_78f9e8be](https://github.com/user-attachments/assets/c8edcfc5-2572-4ee9-8375-83bb2d3b0280)
+
+![WhatsApp Image 2025-10-28 at 13 53 18_6ee143b0](https://github.com/user-attachments/assets/69439cce-cad8-41a8-a43b-ca69c335e27d)
+
+![WhatsApp Image 2025-10-28 at 13 53 18_07740eb7](https://github.com/user-attachments/assets/ffec284e-2a50-4492-94c5-1cc1018ffea9)
+
+![WhatsApp Image 2025-10-28 at 13 53 19_14ef45e4](https://github.com/user-attachments/assets/75c5017d-1e90-4525-a37e-79bf53f3c25b)
+
+![WhatsApp Image 2025-10-28 at 13 57 04_47cd7b67](https://github.com/user-attachments/assets/2a18191e-4b47-4f4b-b3bd-866328dd0929)
+
 
 ### Activities
 - **SplashActivity** - Beautiful splash screen with app logo
@@ -182,7 +206,7 @@ This project is created for educational purposes.
 
 ## 👨‍💻 Developer
 
-Developed with ❤️ for learning Android development and promoting awareness of Ayurvedic wellness.
+Developed with Shrawani Chaudari for learning Android development and promoting awareness of Ayurvedic wellness.
 
 ---
 
