@@ -211,3 +211,5 @@ Developed with Shrawani Chaudari for learning Android development and promoting 
 ---
 
 **Note**: The app uses placeholder images. In a production version, you would add high-quality images of herbs, remedies, and ingredients in the drawable folders.
+#   A y u r v e d a - R e m e d i e s - M o b i l e - A p p l i c a t i o n - D e v e l o p m e n t  
+ 
